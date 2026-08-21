@@ -117,7 +117,7 @@ export const ModulesPitch: React.FC = () => {
         {/* Botón 1: Licencias y Suplencias */}
         <button
           onClick={() => setActiveModule('licencias')}
-          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
+          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group cursor-pointer ${
             activeModule === 'licencias'
               ? 'bg-emerald-600 text-white border-emerald-500 shadow-lg ring-2 ring-emerald-400/30'
               : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-emerald-500/50 hover:shadow-md'
@@ -146,7 +146,7 @@ export const ModulesPitch: React.FC = () => {
         {/* Botón 2: Liquidación de Haberes y Tesorería */}
         <button
           onClick={() => setActiveModule('tesoreria')}
-          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
+          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group cursor-pointer ${
             activeModule === 'tesoreria'
               ? 'bg-red-700 text-white border-red-500 shadow-lg ring-2 ring-red-400/30'
               : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-red-500/50 hover:shadow-md'
@@ -175,7 +175,7 @@ export const ModulesPitch: React.FC = () => {
         {/* Botón 3: Experiencia Docente y Autogestión */}
         <button
           onClick={() => setActiveModule('autogestion')}
-          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
+          className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group cursor-pointer ${
             activeModule === 'autogestion'
               ? 'bg-emerald-700 text-white border-emerald-500 shadow-lg ring-2 ring-emerald-400/30'
               : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-emerald-500/50 hover:shadow-md'
@@ -209,13 +209,13 @@ export const ModulesPitch: React.FC = () => {
       {activeModule === 'licencias' && (
         <div className="space-y-6 animate-fadeIn">
           
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2c344a] pb-3">
+          <div className="flex items-center justify-between border-b border-[#203529] pb-3">
             <div>
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <FileText className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <FileText className="w-5 h-5 text-emerald-400" />
                 Módulo 1: Gestión de Licencias y Cobertura de Suplencias
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-400 mt-0.5">
                 Herramientas interactivas para que la secretaría escolar resuelva el ausentismo sin demoras.
               </p>
             </div>
@@ -224,25 +224,25 @@ export const ModulesPitch: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* Tool A: Buscador Automático de Suplentes */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <Search className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Buscador Inteligente de Suplentes</h3>
+                  <Search className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Buscador Inteligente de Suplentes</h3>
                 </div>
-                <span className="text-[10px] bg-blue-100 dark:bg-blue-500/20 text-blue-800 dark:text-blue-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-500/30">
                   Orden de Mérito
                 </span>
               </div>
 
               <div className="space-y-3">
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <label className="block text-xs font-semibold text-slate-400">
                   Seleccionar Materia / Curso a Cubrir:
                 </label>
                 <select
                   value={selectedSubject}
                   onChange={(e) => setSelectedSubject(e.target.value)}
-                  className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 >
                   <option value="Matemática - 3er Año Secundaria">Matemática - 3er Año Secundaria (Turno Mañana)</option>
                   <option value="Prácticas del Lenguaje - 1er Año">Prácticas del Lenguaje - 1er Año</option>
@@ -251,19 +251,19 @@ export const ModulesPitch: React.FC = () => {
                 </select>
 
                 <div className="space-y-2 pt-2">
-                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">Candidatos disponibles en padrón:</p>
+                  <p className="text-xs font-semibold text-slate-400">Candidatos disponibles en padrón:</p>
                   {mockSupplements.map((sup) => (
                     <div 
                       key={sup.id}
-                      className="p-3 bg-slate-50 dark:bg-[#181d2b] rounded-xl border border-slate-200 dark:border-[#2c344a] flex items-center justify-between text-xs"
+                      className="p-3 bg-[#0a110d] rounded-xl border border-[#203529] flex items-center justify-between text-xs"
                     >
                       <div>
-                        <p className="font-bold text-slate-900 dark:text-white">{sup.name}</p>
-                        <p className="text-slate-500 dark:text-slate-400 text-[11px]">{sup.availability} • Puntaje: {sup.score}</p>
+                        <p className="font-bold text-white">{sup.name}</p>
+                        <p className="text-slate-400 text-[11px]">{sup.availability} • Puntaje: {sup.score}</p>
                       </div>
                       <button
                         onClick={() => handleAssignSuplente(sup.name)}
-                        className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 py-1.5 rounded-lg transition shadow-2xs text-[11px]"
+                        className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1.5 rounded-lg transition shadow-2xs text-[11px] cursor-pointer"
                       >
                         Asignar Cobertura
                       </button>
@@ -272,7 +272,7 @@ export const ModulesPitch: React.FC = () => {
                 </div>
 
                 {assignedTeacher && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 p-3 rounded-xl text-xs font-semibold text-center animate-fadeIn">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3 rounded-xl text-xs font-semibold text-center animate-fadeIn">
                     ¡Horas asignadas a <strong className="underline">{assignedTeacher}</strong>! Se ha enviado la notificación por WhatsApp.
                   </div>
                 )}
@@ -280,26 +280,26 @@ export const ModulesPitch: React.FC = () => {
             </div>
 
             {/* Tool B: Calculadora de Topes Estatutarios */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <Calculator className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Calculadora de Días por Estatuto (ABC)</h3>
+                  <Calculator className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Calculadora de Días por Estatuto (ABC)</h3>
                 </div>
-                <span className="text-[10px] bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-500/30">
                   Reglamento
                 </span>
               </div>
 
               <div className="space-y-4 text-xs">
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Artículo / Tipo de Licencia:
                   </label>
                   <select
                     value={licenseTypeCalc}
                     onChange={(e) => setLicenseTypeCalc(e.target.value)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 font-semibold"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-semibold"
                   >
                     <option value="114a1">Art. 114 a.1 - Enfermedad afección ordinaria (Máx. 30 días/año)</option>
                     <option value="114o">Art. 114 o - Atención de Familiar a Cargo (Máx. 20 días/año)</option>
@@ -308,7 +308,7 @@ export const ModulesPitch: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Días acumulados consumidos este año:
                   </label>
                   <input
@@ -317,28 +317,28 @@ export const ModulesPitch: React.FC = () => {
                     max={60}
                     value={daysUsed}
                     onChange={(e) => setDaysUsed(parseInt(e.target.value) || 0)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white focus:outline-none"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
                 {/* Calculation Result */}
-                <div className="bg-slate-50 dark:bg-[#181d2b] p-4 rounded-xl border border-slate-200 dark:border-[#2c344a] space-y-2">
-                  <div className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+                <div className="bg-[#0a110d] p-4 rounded-xl border border-[#203529] space-y-2">
+                  <div className="flex justify-between items-center text-slate-300">
                     <span>Tope Anual Autorizado:</span>
-                    <strong className="text-slate-900 dark:text-white">
+                    <strong className="text-white">
                       {licenseTypeCalc === '114a1' ? '30 días' : licenseTypeCalc === '114o' ? '20 días' : '28 días'}
                     </strong>
                   </div>
-                  <div className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+                  <div className="flex justify-between items-center text-slate-300">
                     <span>Días Disponibles Restantes:</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+                    <strong className="text-emerald-400 font-bold text-sm">
                       {Math.max(0, (licenseTypeCalc === '114a1' ? 30 : licenseTypeCalc === '114o' ? 20 : 28) - daysUsed)} días con goce de sueldo
                     </strong>
                   </div>
                 </div>
 
-                <div className="p-3 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 rounded-xl text-blue-900 dark:text-blue-300 flex items-start gap-2 text-[11px]">
-                  <Bell className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                <div className="p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-emerald-300 flex items-start gap-2 text-[11px]">
+                  <Bell className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <span>
                     El sistema previene automáticamente que el docente solicite más días de los que le corresponden sin previa junta médica.
                   </span>
@@ -355,13 +355,13 @@ export const ModulesPitch: React.FC = () => {
       {activeModule === 'tesoreria' && (
         <div className="space-y-6 animate-fadeIn">
           
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2c344a] pb-3">
+          <div className="flex items-center justify-between border-b border-[#203529] pb-3">
             <div>
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-emerald-400" />
                 Módulo 2: Liquidación de Haberes y Soluciones para Tesorería
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-400 mt-0.5">
                 Herramientas financieras y administrativas para reducir reclamos de sueldo y agilizar la firma digital.
               </p>
             </div>
@@ -370,23 +370,23 @@ export const ModulesPitch: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* Tool C: Importación Masiva de Recibos */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <FileSpreadsheet className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Importador Masivo de Recibos</h3>
+                  <FileSpreadsheet className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Importador Masivo de Recibos</h3>
                 </div>
-                <span className="text-[10px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-500/30">
                   Excel / CSV / Tango
                 </span>
               </div>
 
               <div className="space-y-3 text-xs">
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-400">
                   Subí la planilla de sueldos emitida por tu sistema contable para disponibilizar los recibos a todo el plantel docente en segundos.
                 </p>
 
-                <div className="relative border-2 border-dashed border-slate-300 dark:border-[#2c344a] rounded-2xl p-6 text-center hover:border-emerald-500 bg-slate-50 dark:bg-[#181d2b]">
+                <div className="relative border-2 border-dashed border-[#203529] rounded-2xl p-6 text-center hover:border-emerald-500 bg-[#0a110d]">
                   <input 
                     type="file" 
                     accept=".csv,.xlsx,.xls"
@@ -394,11 +394,11 @@ export const ModulesPitch: React.FC = () => {
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                   />
                   <div className="flex flex-col items-center justify-center gap-2">
-                    <Upload className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                    <Upload className="w-6 h-6 text-emerald-400" />
                     {importFile ? (
-                      <p className="font-bold text-slate-900 dark:text-white">{importFile}</p>
+                      <p className="font-bold text-white">{importFile}</p>
                     ) : (
-                      <p className="font-semibold text-slate-700 dark:text-slate-300">
+                      <p className="font-semibold text-slate-300">
                         Arrastrá el archivo Excel de liquidación aquí
                       </p>
                     )}
@@ -406,13 +406,13 @@ export const ModulesPitch: React.FC = () => {
                 </div>
 
                 {isImporting && (
-                  <p className="text-center font-bold text-emerald-600 dark:text-emerald-400 animate-pulse">
+                  <p className="text-center font-bold text-emerald-400 animate-pulse">
                     Procesando 85 recibos de sueldo...
                   </p>
                 )}
 
                 {importFile && !isImporting && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 p-3 rounded-xl text-center font-semibold">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3 rounded-xl text-center font-semibold">
                     ¡85 Recibos de Sueldo digitalizados y publicados correctamente!
                   </div>
                 )}
@@ -420,20 +420,20 @@ export const ModulesPitch: React.FC = () => {
             </div>
 
             {/* Tool D: Solicitud de Adelanto de Sueldo */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <DollarSign className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Solicitud Digital de Adelanto</h3>
+                  <DollarSign className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Solicitud Digital de Adelanto</h3>
                 </div>
-                <span className="text-[10px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-red-600/20 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-500/40">
                   Tesorería
                 </span>
               </div>
 
               <form onSubmit={handleAdvanceSubmit} className="space-y-3 text-xs">
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Monto Solicitado ($ ARS):
                   </label>
                   <input
@@ -441,31 +441,31 @@ export const ModulesPitch: React.FC = () => {
                     step={5000}
                     value={advanceAmount}
                     onChange={(e) => setAdvanceAmount(parseInt(e.target.value) || 0)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white font-bold text-sm"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Motivo / Justificación:
                   </label>
                   <input
                     type="text"
                     value={advanceReason}
                     onChange={(e) => setAdvanceReason(e.target.value)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer"
                 >
                   Enviar Solicitud a Representación Legal
                 </button>
 
                 {advanceSuccess && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 p-3 rounded-xl text-center font-semibold animate-fadeIn">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3 rounded-xl text-center font-semibold animate-fadeIn">
                     ¡Solicitud de anticipo por ${advanceAmount.toLocaleString('es-AR')} enviada a revisión!
                   </div>
                 )}
@@ -481,13 +481,13 @@ export const ModulesPitch: React.FC = () => {
       {activeModule === 'autogestion' && (
         <div className="space-y-6 animate-fadeIn">
           
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2c344a] pb-3">
+          <div className="flex items-center justify-between border-b border-[#203529] pb-3">
             <div>
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <UserCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <UserCheck className="w-5 h-5 text-emerald-400" />
                 Módulo 3: Portal de Autogestión y Experiencia Docente
               </h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-400 mt-0.5">
                 Simplifica los trámites presenciales de los profesores mediante autogestión 100% digital.
               </p>
             </div>
@@ -496,24 +496,24 @@ export const ModulesPitch: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* Tool E: Declaración Jurada de Cargos */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">DDJJ de Cargos e Incompatibilidad</h3>
+                  <Briefcase className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">DDJJ de Cargos e Incompatibilidad</h3>
                 </div>
-                <span className="text-[10px] bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-red-600/20 text-red-300 font-semibold px-2 py-0.5 rounded border border-red-500/40">
                   Obligatorio DGCyE
                 </span>
               </div>
 
               <form onSubmit={handleDdjjSubmit} className="space-y-3 text-xs">
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-400">
                   Actualizá tu declaración de horas en otras instituciones educativas para control de superposición horaria.
                 </p>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Cantidad de otros establecimientos donde ejerces:
                   </label>
                   <input
@@ -522,12 +522,12 @@ export const ModulesPitch: React.FC = () => {
                     max={10}
                     value={otherSchoolsCount}
                     onChange={(e) => setOtherSchoolsCount(parseInt(e.target.value) || 0)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Total general de horas cátedra semanales:
                   </label>
                   <input
@@ -536,19 +536,19 @@ export const ModulesPitch: React.FC = () => {
                     max={60}
                     value={totalHours}
                     onChange={(e) => setTotalHours(parseInt(e.target.value) || 0)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm cursor-pointer"
                 >
                   Firmar y Presentar DDJJ Digital
                 </button>
 
                 {ddjjSuccess && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 p-3 rounded-xl text-center font-semibold animate-fadeIn">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3 rounded-xl text-center font-semibold animate-fadeIn">
                     ¡Declaración Jurada presentada con éxito! Copia guardada en legajo.
                   </div>
                 )}
@@ -556,30 +556,30 @@ export const ModulesPitch: React.FC = () => {
             </div>
 
             {/* Tool F: Solicitud de Constancias de Servicios y Certificados */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Certificados y Constancias Express</h3>
+                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Certificados y Constancias Express</h3>
                 </div>
-                <span className="text-[10px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 font-semibold px-2 py-0.5 rounded">
-                  Firma Digital Valida
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-500/30">
+                  Firma Digital Válida
                 </span>
               </div>
 
               <div className="space-y-3 text-xs">
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-400">
                   Emití constancias laborales al instante sin tener que ir a secretaría o esperar días.
                 </p>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Tipo de Certificado:
                   </label>
                   <select 
                     value={certType}
                     onChange={(e) => setCertType(e.target.value)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   >
                     <option value="antiguedad">Certificado de Trabajo & Antigüedad</option>
                     <option value="prestacion">Constancia de Prestación de Servicios (Acompañamiento)</option>
@@ -589,7 +589,7 @@ export const ModulesPitch: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                  <label className="block font-semibold text-slate-400 mb-1">
                     Presentar ante / Motivo:
                   </label>
                   <input 
@@ -597,7 +597,7 @@ export const ModulesPitch: React.FC = () => {
                     value={certReason}
                     onChange={(e) => setCertReason(e.target.value)}
                     placeholder="Ej: Entidad Bancaria, Obra Social, Obra Social, etc."
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
@@ -607,64 +607,64 @@ export const ModulesPitch: React.FC = () => {
                     setCertSuccess(true);
                     setTimeout(() => setCertSuccess(false), 3500);
                   }}
-                  className="w-full bg-slate-900 hover:bg-slate-800 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Download className="w-4 h-4" /> Generar y Descargar PDF Firmado
                 </button>
 
                 {certSuccess && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/30 p-3 rounded-xl text-center font-semibold animate-fadeIn flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500" /> ¡Documento descargado con Código QR de validación!
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-3 rounded-xl text-center font-semibold animate-fadeIn flex items-center justify-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" /> ¡Documento descargado con Código QR de validación!
                   </div>
                 )}
               </div>
             </div>
 
             {/* Tool G: Plan de Contingencia / Tarea Pedagógica por Ausencia */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <FilePlus className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Plan de Contingencia para Suplentes</h3>
+                  <FilePlus className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Plan de Contingencia para Suplentes</h3>
                 </div>
-                <span className="text-[10px] bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded border border-amber-500/30">
                   Aviso Preventivo
                 </span>
               </div>
 
               <div className="space-y-3 text-xs">
-                <p className="text-slate-600 dark:text-slate-400">
+                <p className="text-slate-400">
                   Dejá indicaciones y la tarea pedagógica lista para los alumnos y la preceptoría cuando tenés que faltar.
                 </p>
 
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">Curso / Curso:</label>
+                    <label className="block font-semibold text-slate-400 mb-1">Curso / Año:</label>
                     <input 
                       type="text" 
                       value={absentCourse}
                       onChange={(e) => setAbsentCourse(e.target.value)}
-                      className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                      className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                   </div>
                   <div>
-                    <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">Link de Classroom / Drive:</label>
+                    <label className="block font-semibold text-slate-400 mb-1">Link de Classroom / Drive:</label>
                     <input 
                       type="text" 
                       value={contingencyLink}
                       onChange={(e) => setContingencyLink(e.target.value)}
-                      className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                      className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-600 dark:text-slate-400 mb-1">Tema / Actividad propuesta:</label>
+                  <label className="block font-semibold text-slate-400 mb-1">Tema / Actividad propuesta:</label>
                   <textarea 
                     rows={2}
                     value={contingencyTopic}
                     onChange={(e) => setContingencyTopic(e.target.value)}
-                    className="w-full bg-slate-50 dark:bg-[#181d2b] border border-slate-300 dark:border-[#2c344a] rounded-xl px-3 py-2 text-slate-900 dark:text-white"
+                    className="w-full bg-[#0a110d] border border-[#203529] rounded-xl px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
 
@@ -675,21 +675,21 @@ export const ModulesPitch: React.FC = () => {
                       setContingencyCopied(true);
                       setTimeout(() => setContingencyCopied(false), 3000);
                     }}
-                    className="flex-1 bg-indigo-50 dark:bg-indigo-500/20 hover:bg-indigo-100 dark:hover:bg-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-bold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5"
+                    className="flex-1 bg-[#1a2c21] hover:bg-[#233b2e] text-emerald-300 font-bold py-2.5 rounded-xl border border-[#294535] transition flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Copy className="w-3.5 h-3.5" /> Copiar para Preceptoría
                   </button>
                   <button
                     type="button"
                     onClick={() => alert("Plan de contingencia notificado a Vicedirección y Preceptoría del curso.")}
-                    className="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center gap-1.5"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     Notificar a Regencia
                   </button>
                 </div>
 
                 {contingencyCopied && (
-                  <div className="bg-emerald-100 dark:bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 p-2.5 rounded-xl text-center font-medium animate-fadeIn">
+                  <div className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 p-2.5 rounded-xl text-center font-medium animate-fadeIn">
                     ¡Copiado al portapapeles! Listo para enviar por WhatsApp o correo institucional.
                   </div>
                 )}
@@ -697,54 +697,54 @@ export const ModulesPitch: React.FC = () => {
             </div>
 
             {/* Tool H: App Móvil & Accesos Directos Útiles */}
-            <div className="bg-white dark:bg-[#212738] rounded-2xl border border-slate-200 dark:border-[#2c344a] p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2c344a] pb-3">
+            <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-[#203529] pb-3">
                 <div className="flex items-center gap-2">
-                  <Smartphone className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">Acceso Móvil PWA & Utilidades</h3>
+                  <Smartphone className="w-5 h-5 text-emerald-400" />
+                  <h3 className="font-bold text-white text-base">Acceso Móvil PWA & Utilidades</h3>
                 </div>
-                <span className="text-[10px] bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 font-semibold px-2 py-0.5 rounded">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-500/30">
                   Experiencia Novedosa
                 </span>
               </div>
 
               <div className="space-y-3 text-xs">
-                <div className="p-3 bg-slate-50 dark:bg-[#181d2b] rounded-xl border border-slate-200 dark:border-[#2c344a] flex items-center justify-between">
+                <div className="p-3 bg-[#0a110d] rounded-xl border border-[#203529] flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <Calendar className="w-4 h-4 text-indigo-500" />
+                    <Calendar className="w-4 h-4 text-emerald-400" />
                     <div>
-                      <p className="font-bold text-slate-900 dark:text-white">Calendario Escolar & Feriados Docentes</p>
-                      <p className="text-slate-500 dark:text-slate-400 text-[11px]">Sincronización directa con Google / Outlook</p>
+                      <p className="font-bold text-white">Calendario Escolar & Feriados Docentes</p>
+                      <p className="text-slate-400 text-[11px]">Sincronización directa con Google / Outlook</p>
                     </div>
                   </div>
                   <button 
                     onClick={() => alert("Sincronizando Calendario Académico DGCyE a tu calendario de Google...")}
-                    className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-white font-semibold px-3 py-1.5 rounded-lg transition"
+                    className="bg-[#1a2c21] hover:bg-[#233b2e] border border-[#294535] text-white font-semibold px-3 py-1.5 rounded-lg transition cursor-pointer"
                   >
                     Sincronizar
                   </button>
                 </div>
 
-                <div className="p-3 bg-slate-50 dark:bg-[#181d2b] rounded-xl border border-slate-200 dark:border-[#2c344a] flex items-center justify-between">
+                <div className="p-3 bg-[#0a110d] rounded-xl border border-[#203529] flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <Clock className="w-4 h-4 text-indigo-500" />
+                    <Clock className="w-4 h-4 text-emerald-400" />
                     <div>
-                      <p className="font-bold text-slate-900 dark:text-white">Calculadora de Antigüedad y Trienios</p>
-                      <p className="text-slate-500 dark:text-slate-400 text-[11px]">Simulá tus cobros por tramos de 3 y 5 años</p>
+                      <p className="font-bold text-white">Calculadora de Antigüedad y Trienios</p>
+                      <p className="text-slate-400 text-[11px]">Simulá tus cobros por tramos de 3 y 5 años</p>
                     </div>
                   </div>
                   <button 
                     onClick={() => alert("Antigüedad actual: 10 años (60%). Próximo tramo (70%): en 1 año y 10 meses.")}
-                    className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-white font-semibold px-3 py-1.5 rounded-lg transition"
+                    className="bg-[#1a2c21] hover:bg-[#233b2e] border border-[#294535] text-white font-semibold px-3 py-1.5 rounded-lg transition cursor-pointer"
                   >
                     Calcular
                   </button>
                 </div>
 
-                <div className="p-4 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/30 rounded-xl text-indigo-950 dark:text-indigo-300 text-center space-y-1">
-                  <Smartphone className="w-6 h-6 mx-auto text-indigo-600 dark:text-indigo-400" />
+                <div className="p-4 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-emerald-300 text-center space-y-1">
+                  <Smartphone className="w-6 h-6 mx-auto text-emerald-400" />
                   <p className="font-bold text-xs">Instalá la App en tu celular (PWA)</p>
-                  <p className="text-[11px] text-indigo-800 dark:text-indigo-400">
+                  <p className="text-[11px] text-emerald-400/90">
                     Abrí esta página en el celular y seleccioná "Agregar a la pantalla principal". Tendrás acceso rápido sin descargar nada de la tienda.
                   </p>
                 </div>
