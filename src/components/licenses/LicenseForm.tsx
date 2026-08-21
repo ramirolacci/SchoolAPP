@@ -125,11 +125,11 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
   const endDateComputed = computeEndDate(startDate, durationDays);
 
   return (
-    <div className="bg-[#132019] border border-[#203529] rounded-2xl shadow-xl p-6 sm:p-8">
+    <div className="bg-[#1e293b] border border-slate-700 rounded-2xl shadow-xl p-6 sm:p-8">
       
-      <div className="flex items-center justify-between border-b border-[#203529] pb-4 mb-6">
+      <div className="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 rounded-xl">
+          <div className="p-3 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded-xl">
             <FilePlus className="w-6 h-6" />
           </div>
           <div>
@@ -141,7 +141,7 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
           <button 
             type="button" 
             onClick={onCancel}
-            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-[#1a2c21] transition"
+            className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition"
           >
             <X className="w-5 h-5" />
           </button>
@@ -170,8 +170,8 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
               <label 
                 className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
                   type === 'propia' 
-                    ? 'bg-emerald-500/20 border-emerald-500 ring-2 ring-emerald-500/30 font-semibold text-white' 
-                    : 'bg-[#0a110d] border-[#203529] hover:border-slate-600 text-slate-300'
+                    ? 'bg-blue-500/20 border-blue-500 ring-2 ring-blue-500/30 font-semibold text-white' 
+                    : 'bg-[#0f172a] border-slate-700 hover:border-slate-600 text-slate-300'
                 }`}
               >
                 <input 
@@ -180,7 +180,7 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
                   value="propia" 
                   checked={type === 'propia'}
                   onChange={() => setType('propia')}
-                  className="w-4 h-4 text-emerald-500 focus:ring-emerald-500"
+                  className="w-4 h-4 text-blue-500 focus:ring-blue-500"
                 />
                 <div>
                   <div className="text-sm">Licencia Propia</div>
@@ -191,8 +191,8 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
               <label 
                 className={`flex items-center gap-3 p-4 rounded-xl border cursor-pointer transition-all ${
                   type === 'familiar' 
-                    ? 'bg-red-500/20 border-red-500 ring-2 ring-red-500/30 font-semibold text-white' 
-                    : 'bg-[#0a110d] border-[#203529] hover:border-slate-600 text-slate-300'
+                    ? 'bg-amber-500/20 border-amber-500 ring-2 ring-amber-500/30 font-semibold text-white' 
+                    : 'bg-[#0f172a] border-slate-700 hover:border-slate-600 text-slate-300'
                 }`}
               >
                 <input 
@@ -201,7 +201,7 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
                   value="familiar" 
                   checked={type === 'familiar'}
                   onChange={() => setType('familiar')}
-                  className="w-4 h-4 text-red-500 focus:ring-red-500"
+                  className="w-4 h-4 text-amber-500 focus:ring-amber-500"
                 />
                 <div>
                   <div className="text-sm">Atención de Familiar</div>
@@ -213,14 +213,14 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
 
           {/* If Familiar, Select Relation */}
           {type === 'familiar' && (
-            <div className="bg-red-500/10 p-4 rounded-xl border border-red-500/30 space-y-2 animate-fadeIn">
-              <label className="block text-xs font-semibold text-red-300">
+            <div className="bg-amber-500/10 p-4 rounded-xl border border-amber-500/30 space-y-2 animate-fadeIn">
+              <label className="block text-xs font-semibold text-amber-300">
                 Vínculo Familiar / Parentesco <span className="text-rose-400">*</span>
               </label>
               <select
                 value={familyMemberRelation}
                 onChange={(e) => setFamilyMemberRelation(e.target.value)}
-                className="w-full bg-[#0a110d] border border-red-500/40 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full bg-[#0f172a] border border-amber-500/40 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
                 <option value="Hijo/a">Hijo / Hija</option>
                 <option value="Cónyuge">Cónyuge / Conviviente</option>
@@ -243,8 +243,8 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
                 type="date"
                 value={startDate}
                 onChange={handleStartDateChange}
-                className={`w-full bg-[#0a110d] border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:ring-2 ${
-                  errors.startDate ? 'border-rose-500 focus:ring-rose-500' : 'border-[#203529] focus:ring-emerald-500'
+                className={`w-full bg-[#0f172a] border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:ring-2 ${
+                  errors.startDate ? 'border-rose-500 focus:ring-rose-500' : 'border-slate-700 focus:ring-blue-500'
                 }`}
               />
               {errors.startDate && (
@@ -265,8 +265,8 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
                 max={90}
                 value={durationDays}
                 onChange={(e) => setDurationDays(parseInt(e.target.value) || 1)}
-                className={`w-full bg-[#0a110d] border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:ring-2 ${
-                  errors.durationDays ? 'border-rose-500 focus:ring-rose-500' : 'border-[#203529] focus:ring-emerald-500'
+                className={`w-full bg-[#0f172a] border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:ring-2 ${
+                  errors.durationDays ? 'border-rose-500 focus:ring-rose-500' : 'border-slate-700 focus:ring-blue-500'
                 }`}
               />
               {errors.durationDays && (
@@ -291,9 +291,9 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
 
           {/* Calculated End Date Preview */}
           {startDate && durationDays > 0 && (
-            <div className="bg-emerald-500/10 rounded-xl p-3 text-xs text-emerald-300 border border-emerald-500/30 flex items-center justify-between">
+            <div className="bg-blue-500/10 rounded-xl p-3 text-xs text-blue-300 border border-blue-500/30 flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-emerald-400" />
+                <Calendar className="w-4 h-4 text-blue-400" />
                 Fecha estimada de alta / reintegro:
               </span>
               <strong className="text-sm text-white font-bold">
@@ -315,8 +315,8 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
                 setDiagnosis(e.target.value);
                 if (errors.diagnosis) setErrors((prev) => ({ ...prev, diagnosis: '' }));
               }}
-              className={`w-full bg-[#0a110d] border rounded-xl p-3 text-sm text-white focus:outline-none focus:ring-2 ${
-                errors.diagnosis ? 'border-rose-500 focus:ring-rose-500' : 'border-[#203529] focus:ring-emerald-500'
+              className={`w-full bg-[#0f172a] border rounded-xl p-3 text-sm text-white focus:outline-none focus:ring-2 ${
+                errors.diagnosis ? 'border-rose-500 focus:ring-rose-500' : 'border-slate-700 focus:ring-blue-500'
               }`}
             />
             <div className="flex justify-between items-center mt-1">
@@ -335,7 +335,7 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
               Certificado Médico Digitalizado <span className="text-rose-400">*</span>
             </label>
 
-            <div className="relative border-2 border-dashed border-[#203529] rounded-2xl p-6 text-center hover:border-emerald-400 transition-colors bg-[#0a110d]">
+            <div className="relative border-2 border-dashed border-slate-700 rounded-2xl p-6 text-center hover:border-blue-400 transition-colors bg-[#0f172a]">
               <input 
                 type="file" 
                 accept="image/*,.pdf"
@@ -344,18 +344,18 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
               />
               
               <div className="flex flex-col items-center justify-center gap-2">
-                <div className="p-3 bg-emerald-500/20 text-emerald-300 rounded-full">
+                <div className="p-3 bg-blue-500/20 text-blue-300 rounded-full">
                   <Upload className="w-6 h-6" />
                 </div>
 
                 {fileName ? (
                   <div className="text-center">
                     <p className="text-sm font-bold text-white flex items-center gap-1.5 justify-center">
-                      <FileText className="w-4 h-4 text-emerald-400" />
+                      <FileText className="w-4 h-4 text-blue-400" />
                       {fileName}
                     </p>
                     <p className="text-xs text-slate-400">{fileSize} • Archivo seleccionado</p>
-                    <span className="inline-block mt-2 text-xs font-semibold text-emerald-400 underline">
+                    <span className="inline-block mt-2 text-xs font-semibold text-blue-400 underline">
                       Cambiar archivo
                     </span>
                   </div>
@@ -380,12 +380,12 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
           </div>
 
           {/* Form Actions */}
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#203529]">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-700">
             {onCancel && (
               <button
                 type="button"
                 onClick={onCancel}
-                className="px-5 py-2.5 rounded-xl border border-[#203529] text-slate-300 text-sm font-medium hover:bg-[#1a2c21] transition"
+                className="px-5 py-2.5 rounded-xl border border-slate-700 text-slate-300 text-sm font-medium hover:bg-slate-800 transition"
               >
                 Cancelar
               </button>
@@ -393,7 +393,7 @@ export const LicenseForm: React.FC<LicenseFormProps> = ({ onSubmit, onCancel }) 
 
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2"
+              className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md transition-all flex items-center gap-2"
             >
               <FilePlus className="w-4 h-4" />
               Enviar Licencia

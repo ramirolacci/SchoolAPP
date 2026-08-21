@@ -45,14 +45,14 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
     <div className="space-y-6">
       
       {/* Welcome Banner Card */}
-      <div className="bg-gradient-to-r from-emerald-950 via-[#102419] to-[#0c1811] rounded-2xl p-6 text-white shadow-xl border border-emerald-500/40 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-slate-900 via-blue-950/60 to-slate-900 rounded-2xl p-6 text-white shadow-xl border border-blue-500/30 relative overflow-hidden">
         {/* Soft glow */}
-        <div className="absolute -right-8 -bottom-10 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl" />
-        <div className="absolute right-20 -top-10 w-32 h-32 bg-red-500/10 rounded-full blur-2xl" />
+        <div className="absolute -right-8 -bottom-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute right-20 -top-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl" />
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/40 mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold border border-blue-500/30 mb-2">
               <GraduationCap className="w-3.5 h-3.5" /> Portal Docente Oficial ABC
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -66,15 +66,15 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenNewLicense}
-              className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl transition shadow-lg flex items-center gap-2 text-sm"
+              className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2.5 rounded-xl transition shadow-lg flex items-center gap-2 text-sm"
             >
               <Plus className="w-4 h-4" /> Cargar Licencia
             </button>
             <Link
               to="/recibos"
-              className="bg-[#1a2c21] hover:bg-[#233b2e] text-emerald-100 font-semibold px-4 py-2.5 rounded-xl border border-[#294535] transition text-sm flex items-center gap-2"
+              className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-2.5 rounded-xl border border-slate-700 transition text-sm flex items-center gap-2"
             >
-              <Receipt className="w-4 h-4 text-emerald-300" /> Ver Recibos
+              <Receipt className="w-4 h-4 text-blue-400" /> Ver Recibos
             </Link>
           </div>
         </div>
@@ -84,10 +84,10 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Recibos Pendientes */}
-        <div className="bg-[#132019] p-5 rounded-2xl border border-[#203529] shadow-md hover:border-emerald-600/50 transition">
+        <div className="bg-[#1e293b] p-5 rounded-2xl border border-slate-700 shadow-md hover:border-blue-500/50 transition">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Recibos por Firmar</span>
-            <div className={`p-2.5 rounded-xl border ${pendingPayslips.length > 0 ? 'bg-amber-500/15 text-amber-300 border-amber-500/30' : 'bg-[#0a110d] text-slate-400 border-[#203529]'}`}>
+            <div className={`p-2.5 rounded-xl border ${pendingPayslips.length > 0 ? 'bg-amber-500/15 text-amber-300 border-amber-500/30' : 'bg-[#0f172a] text-slate-400 border-slate-700'}`}>
               <Receipt className="w-5 h-5" />
             </div>
           </div>
@@ -107,10 +107,10 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
         </div>
 
         {/* Licencias en Trámite */}
-        <div className="bg-[#132019] p-5 rounded-2xl border border-[#203529] shadow-md hover:border-emerald-600/50 transition">
+        <div className="bg-[#1e293b] p-5 rounded-2xl border border-slate-700 shadow-md hover:border-blue-500/50 transition">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Licencias en Trámite</span>
-            <div className="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+            <div className="p-2.5 rounded-xl bg-blue-500/15 text-blue-300 border border-blue-500/30">
               <FileText className="w-5 h-5" />
             </div>
           </div>
@@ -118,13 +118,13 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
             <span className="text-2xl font-extrabold text-white">{pendingLicenses.length}</span>
             <span className="text-xs text-slate-400">en proceso</span>
           </div>
-          <p className="text-xs text-emerald-400 font-medium mt-2">
+          <p className="text-xs text-blue-400 font-medium mt-2">
             Pendientes o en revisión
           </p>
         </div>
 
         {/* Licencias Aprobadas */}
-        <div className="bg-[#132019] p-5 rounded-2xl border border-[#203529] shadow-md hover:border-emerald-600/50 transition">
+        <div className="bg-[#1e293b] p-5 rounded-2xl border border-slate-700 shadow-md hover:border-blue-500/50 transition">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Licencias Aprobadas</span>
             <div className="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
@@ -141,15 +141,15 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
         </div>
 
         {/* Último Sueldo Neto */}
-        <div className="bg-[#132019] p-5 rounded-2xl border border-[#203529] shadow-md hover:border-emerald-600/50 transition">
+        <div className="bg-[#1e293b] p-5 rounded-2xl border border-slate-700 shadow-md hover:border-blue-500/50 transition">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Última Liquidación</span>
-            <div className="p-2.5 rounded-xl bg-emerald-600/20 text-emerald-300 border border-emerald-500/30">
+            <div className="p-2.5 rounded-xl bg-blue-600/20 text-blue-300 border border-blue-500/30">
               <UserCheck className="w-5 h-5" />
             </div>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-lg font-extrabold text-emerald-300">{formatCurrency(payslips[0]?.netSalary || 0)}</span>
+            <span className="text-lg font-extrabold text-emerald-400">{formatCurrency(payslips[0]?.netSalary || 0)}</span>
           </div>
           <p className="text-xs text-slate-400 font-medium mt-2">
             {payslips[0]?.period || 'Julio 2026'}
@@ -162,13 +162,13 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Action Needed: Pending Payslips */}
-        <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-md space-y-4">
-          <div className="flex items-center justify-between border-b border-[#203529] pb-3">
+        <div className="bg-[#1e293b] rounded-2xl border border-slate-700 p-6 shadow-md space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-700 pb-3">
             <div className="flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-amber-400" />
               <h3 className="font-bold text-white text-base">Recibos de Sueldo Pendientes</h3>
             </div>
-            <Link to="/recibos" className="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+            <Link to="/recibos" className="text-xs text-blue-400 font-semibold hover:underline flex items-center gap-1">
               Ver todos ({payslips.length}) <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -190,7 +190,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
 
                   <button
                     type="button"
-                    className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-3.5 py-1.5 rounded-xl transition shadow-md"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-3.5 py-1.5 rounded-xl transition shadow-md"
                   >
                     Firmar Ahora
                   </button>
@@ -198,7 +198,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
               ))}
             </div>
           ) : (
-            <div className="py-8 text-center bg-[#0a110d] rounded-xl border border-[#203529] space-y-2">
+            <div className="py-8 text-center bg-[#0f172a] rounded-xl border border-slate-700 space-y-2">
               <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
               <p className="text-sm font-semibold text-white">¡No tenés recibos pendientes de firma!</p>
               <p className="text-xs text-slate-400">Todas tus liquidaciones de haberes han sido confirmadas.</p>
@@ -207,13 +207,13 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
         </div>
 
         {/* Recent Licenses */}
-        <div className="bg-[#132019] rounded-2xl border border-[#203529] p-6 shadow-md space-y-4">
-          <div className="flex items-center justify-between border-b border-[#203529] pb-3">
+        <div className="bg-[#1e293b] rounded-2xl border border-slate-700 p-6 shadow-md space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-700 pb-3">
             <div className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-emerald-400" />
+              <FileText className="w-5 h-5 text-blue-400" />
               <h3 className="font-bold text-white text-base">Últimas Licencias Solicitadas</h3>
             </div>
-            <Link to="/licencias" className="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+            <Link to="/licencias" className="text-xs text-blue-400 font-semibold hover:underline flex items-center gap-1">
               Ir a Licencias <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -222,7 +222,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
             {recentLicenses.map((lic) => (
               <div 
                 key={lic.id}
-                className="p-3.5 rounded-xl bg-[#0a110d] border border-[#203529] flex items-center justify-between text-xs"
+                className="p-3.5 rounded-xl bg-[#0f172a] border border-slate-700 flex items-center justify-between text-xs"
               >
                 <div>
                   <div className="flex items-center gap-2">
@@ -235,7 +235,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
                 <span className={`px-2.5 py-1 rounded-full font-semibold capitalize shrink-0 ${
                   lic.status === 'aprobada' ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30' :
                   lic.status === 'rechazada' ? 'bg-rose-500/15 text-rose-300 border border-rose-500/30' :
-                  lic.status === 'en_revision' ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
+                  lic.status === 'en_revision' ? 'bg-blue-500/15 text-blue-300 border border-blue-500/30' : 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
                 }`}>
                   {lic.status.replace('_', ' ')}
                 </span>
@@ -245,7 +245,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
 
           <button
             onClick={onOpenNewLicense}
-            className="w-full py-2.5 rounded-xl border border-dashed border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 text-xs font-bold transition flex items-center justify-center gap-2"
+            className="w-full py-2.5 rounded-xl border border-dashed border-blue-500/40 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-xs font-bold transition flex items-center justify-center gap-2"
           >
             <Plus className="w-4 h-4" /> Cargar Nueva Solicitud Médica
           </button>

@@ -28,11 +28,11 @@ export const Licenses: React.FC<LicensesProps> = ({
     <div className="space-y-6">
       
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#132019] p-6 rounded-2xl border border-[#203529] shadow-md backdrop-blur-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#1e293b] p-6 rounded-2xl border border-slate-700 shadow-md backdrop-blur-xs">
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold text-white tracking-tight">Gestión de Licencias Médicas</h1>
-            <span className="text-xs bg-emerald-500/15 text-emerald-300 font-semibold px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+            <span className="text-xs bg-blue-500/20 text-blue-300 font-semibold px-2.5 py-0.5 rounded-full border border-blue-400/30">
               Mis Licencias ABC
             </span>
           </div>
@@ -45,8 +45,8 @@ export const Licenses: React.FC<LicensesProps> = ({
           onClick={() => setIsFormOpen(!isFormOpen)}
           className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition shadow-sm ${
             isFormOpen 
-              ? 'bg-[#1a2c21] text-slate-200 hover:bg-[#233b2e] border border-[#294535]'
-              : 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-md'
+              ? 'bg-slate-800 text-slate-200 hover:bg-slate-700 border border-slate-600'
+              : 'bg-blue-600 hover:bg-blue-500 text-white shadow-md'
           }`}
         >
           {isFormOpen ? (

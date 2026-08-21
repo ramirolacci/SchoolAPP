@@ -36,7 +36,7 @@ export const LicenseList: React.FC<LicenseListProps> = ({
     <div className="space-y-6">
       
       {/* Top Controls Header */}
-      <div className="bg-[#132019] p-4 sm:p-5 rounded-2xl border border-[#203529] shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#1e293b] p-4 sm:p-5 rounded-2xl border border-slate-700 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
         
         {/* Search Input */}
         <div className="relative flex-1">
@@ -46,7 +46,7 @@ export const LicenseList: React.FC<LicenseListProps> = ({
             placeholder="Buscar por N° trámite, diagnóstico o fecha..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-[#0a110d] border border-[#203529] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+            className="w-full bg-[#0f172a] border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </div>
       </div>
@@ -68,13 +68,13 @@ export const LicenseList: React.FC<LicenseListProps> = ({
               onClick={() => setFilterStatus(tab.id)}
               className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition flex items-center gap-2 border ${
                 isActive
-                  ? 'bg-emerald-600 text-white border-emerald-500 shadow-md'
-                  : 'bg-[#132019] text-slate-300 border-[#203529] hover:border-slate-600 hover:bg-[#1a2c21]'
+                  ? 'bg-blue-600 text-white border-blue-500 shadow-md'
+                  : 'bg-[#1e293b] text-slate-300 border-slate-700 hover:border-slate-600 hover:bg-slate-700'
               }`}
             >
               <span>{tab.label}</span>
               <span className={`px-1.5 py-0.5 rounded-full text-[10px] ${
-                isActive ? 'bg-emerald-700 text-white' : 'bg-[#0a110d] text-slate-400 border border-[#203529]'
+                isActive ? 'bg-blue-700 text-white' : 'bg-[#0f172a] text-slate-400 border border-slate-700'
               }`}>
                 {count}
               </span>
@@ -91,9 +91,9 @@ export const LicenseList: React.FC<LicenseListProps> = ({
           ))}
         </div>
       ) : (
-        <div className="bg-[#132019] rounded-2xl border border-[#203529] p-12 text-center space-y-3">
-          <div className="w-12 h-12 rounded-full bg-[#0a110d] text-slate-400 flex items-center justify-center mx-auto border border-[#203529]">
-            <FileQuestion className="w-6 h-6 text-emerald-400" />
+        <div className="bg-[#1e293b] rounded-2xl border border-slate-700 p-12 text-center space-y-3">
+          <div className="w-12 h-12 rounded-full bg-[#0f172a] text-slate-400 flex items-center justify-center mx-auto border border-slate-700">
+            <FileQuestion className="w-6 h-6 text-blue-400" />
           </div>
           <h3 className="text-base font-bold text-white">No se encontraron licencias</h3>
           <p className="text-xs text-slate-400 max-w-sm mx-auto">
@@ -104,7 +104,7 @@ export const LicenseList: React.FC<LicenseListProps> = ({
           {onOpenForm && (
             <button
               onClick={onOpenForm}
-              className="inline-flex items-center gap-1.5 text-xs text-emerald-300 font-semibold bg-emerald-500/10 px-3.5 py-2 rounded-xl border border-emerald-500/30 hover:bg-emerald-500/20 transition mt-2"
+              className="inline-flex items-center gap-1.5 text-xs text-blue-300 font-semibold bg-blue-500/10 px-3.5 py-2 rounded-xl border border-blue-500/30 hover:bg-blue-500/20 transition mt-2"
             >
               <Plus className="w-3.5 h-3.5" /> Registrar Primera Licencia
             </button>

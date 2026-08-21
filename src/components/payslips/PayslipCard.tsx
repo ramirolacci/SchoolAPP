@@ -39,10 +39,10 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
   return (
     <div 
       onClick={() => onViewDetail(payslip)}
-      className={`bg-[#132019] rounded-2xl border transition-all cursor-pointer p-5 shadow-md hover:shadow-lg relative overflow-hidden group ${
+      className={`bg-[#1e293b] rounded-2xl border transition-all cursor-pointer p-5 shadow-md hover:shadow-lg relative overflow-hidden group ${
         payslip.status === 'pendiente' 
           ? 'border-amber-500/40 ring-1 ring-amber-500/20 hover:border-amber-400' 
-          : 'border-[#203529] hover:border-emerald-500/50'
+          : 'border-slate-700 hover:border-blue-500/50'
       }`}
     >
       {/* Top Accent bar */}
@@ -89,15 +89,15 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
       </div>
 
       {/* Financial Amounts Summary */}
-      <div className="bg-[#0a110d] rounded-xl p-3.5 border border-[#203529] my-4 grid grid-cols-2 gap-3">
+      <div className="bg-[#0f172a] rounded-xl p-3.5 border border-slate-700 my-4 grid grid-cols-2 gap-3">
         <div>
           <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Sueldo Neto a Cobrar</span>
-          <span className="text-lg font-extrabold text-emerald-300">
+          <span className="text-lg font-extrabold text-emerald-400">
             {formatCurrency(payslip.netSalary)}
           </span>
         </div>
 
-        <div className="text-right border-l border-[#203529] pl-3">
+        <div className="text-right border-l border-slate-700 pl-3">
           <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">Sueldo Bruto</span>
           <span className="text-sm font-bold text-slate-200">
             {formatCurrency(payslip.grossSalary)}
@@ -114,7 +114,7 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
       )}
 
       {/* Card Actions */}
-      <div className="flex items-center justify-between gap-2 pt-3 border-t border-[#203529] text-xs">
+      <div className="flex items-center justify-between gap-2 pt-3 border-t border-slate-700 text-xs">
         
         <button
           type="button"
@@ -122,7 +122,7 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
             e.stopPropagation();
             onViewDetail(payslip);
           }}
-          className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 font-semibold py-1.5 px-2.5 rounded-xl hover:bg-[#1a2c21] transition"
+          className="flex items-center gap-1 text-slate-300 hover:text-blue-400 font-semibold py-1.5 px-2.5 rounded-xl hover:bg-slate-800 transition"
         >
           <Eye className="w-3.5 h-3.5" />
           Ver Detalle
@@ -132,7 +132,7 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
           <button
             type="button"
             onClick={handleDownload}
-            className="flex items-center gap-1 bg-[#1a2c21] hover:bg-[#233b2e] text-slate-200 font-semibold px-3 py-1.5 rounded-xl transition border border-[#294535]"
+            className="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-3 py-1.5 rounded-xl transition border border-slate-700"
             title="Descargar PDF"
           >
             <Download className="w-3.5 h-3.5" />
@@ -143,7 +143,7 @@ export const PayslipCard: React.FC<PayslipCardProps> = ({ payslip, onSign, onVie
             <button
               type="button"
               onClick={handleSignClick}
-              className="flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-1.5 rounded-xl transition shadow-md"
+              className="flex items-center gap-1 bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 py-1.5 rounded-xl transition shadow-md"
             >
               <FileCheck className="w-3.5 h-3.5" />
               Firmar Digitalmente

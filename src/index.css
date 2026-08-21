@@ -6,25 +6,25 @@
   color-scheme: dark;
 }
 
-/* 100% Dark Mode Exclusive Background (#181c28) */
+/* 100% Dark Mode Exclusive Background (#0f172a Slate 900) */
 html, body {
   color-scheme: dark;
-  background-color: #0d1511;
-  color: #f1f5f9;
+  background-color: #0f172a;
+  color: #f8fafc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom dark scrollbars with Colegio San Jorge pine tones */
+/* Custom dark scrollbars with Slate tones */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1511;
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3328;
+  background: #334155;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
