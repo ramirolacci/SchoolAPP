@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#1e2436]/95 border-b border-[#2c344b] text-slate-100 backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-40 bg-[#101b14]/95 border-b border-[#203529] text-slate-100 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
@@ -61,11 +61,11 @@ export const Header: React.FC<HeaderProps> = ({
             <div>
               <div className="flex items-center gap-1.5 font-bold text-lg tracking-tight text-white leading-tight">
                 Colegio San Jorge
-                <span className="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded border bg-blue-500/20 text-blue-300 border-blue-400/30">
+                <span className="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded border bg-red-600/20 text-red-300 border-red-500/40">
                   Portal ABC
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-emerald-400/80">
                 Mis Licencias & Recibos Digitales
               </p>
             </div>
@@ -80,8 +80,8 @@ export const Header: React.FC<HeaderProps> = ({
                 className={({ isActive }) =>
                   `flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-blue-500/20 text-blue-300 font-semibold border border-blue-400/30 shadow-xs'
-                      : 'text-slate-300 hover:bg-[#283046] hover:text-white'
+                      ? 'bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/40 shadow-xs'
+                      : 'text-slate-300 hover:bg-[#1a2c21] hover:text-white'
                   }`
                 }
               >
@@ -103,23 +103,23 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative hidden sm:block">
               <button 
                 type="button" 
-                className="p-2 rounded-xl text-slate-300 hover:bg-[#283046] hover:text-white transition"
+                className="p-2 rounded-xl text-slate-300 hover:bg-[#1a2c21] hover:text-white transition"
                 title="Notificaciones"
               >
                 <Bell className="w-5 h-5" />
                 {(pendingPayslipsCount > 0 || pendingLicensesCount > 0) && (
-                  <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-amber-400 rounded-full ring-2 ring-[#1e2436] animate-pulse" />
+                  <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-amber-400 rounded-full ring-2 ring-[#101b14] animate-pulse" />
                 )}
               </button>
             </div>
             
             {/* User Pill */}
             <NavLink to="/perfil" className="hidden lg:flex items-center gap-2.5 group hover:opacity-90 transition">
-              <div className="w-9 h-9 rounded-full font-semibold text-xs flex items-center justify-center border shadow-xs bg-blue-600/30 text-blue-300 border-blue-500/40">
+              <div className="w-9 h-9 rounded-full font-semibold text-xs flex items-center justify-center border shadow-xs bg-emerald-600/30 text-emerald-300 border-emerald-500/40">
                 MR
               </div>
               <div className="text-left leading-tight">
-                <p className="text-xs font-semibold text-white group-hover:text-blue-300 transition">
+                <p className="text-xs font-semibold text-white group-hover:text-emerald-300 transition">
                   {mockUser.name.split(' ')[1]} {mockUser.name.split(' ')[2]}
                 </p>
                 <p className="text-[11px] text-slate-400">{mockUser.fileNumber}</p>
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-200 hover:bg-[#283046] md:hidden"
+              className="p-2 rounded-xl text-slate-200 hover:bg-[#1a2c21] md:hidden"
               aria-label="Abrir menú"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#2c344b] bg-[#181d2c] px-4 pt-2 pb-4 space-y-1">
+        <div className="md:hidden border-b border-[#203529] bg-[#101b14] px-4 pt-2 pb-4 space-y-1">
           <div className="py-2 border-b border-slate-700/60 mb-2 flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-white">{mockUser.name}</p>
@@ -178,8 +178,8 @@ export const Header: React.FC<HeaderProps> = ({
               className={({ isActive }) =>
                 `flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-medium ${
                   isActive
-                    ? 'bg-blue-600/30 text-blue-300 font-semibold border border-blue-500/30'
-                    : 'text-slate-300 hover:bg-[#283046] hover:text-white'
+                    ? 'bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/40'
+                    : 'text-slate-300 hover:bg-[#1a2c21] hover:text-white'
                 }`
               }
             >

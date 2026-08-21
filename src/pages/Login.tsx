@@ -36,7 +36,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 bg-[#181c28] text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 bg-[#0d1511] text-slate-100 transition-colors duration-200">
       
       {/* Container Box */}
       <div className="max-w-md w-full space-y-6">
@@ -53,15 +53,15 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
             Colegio San Jorge
           </h1>
-          <p className="text-xs sm:text-sm text-slate-400 font-medium">
+          <p className="text-xs sm:text-sm text-emerald-400/90 font-medium">
             Portal Oficial de Licencias & Recibos Digitales (DGCyE ABC)
           </p>
         </div>
 
         {/* Login Card */}
-        <div className="bg-[#212738] rounded-3xl border border-[#2c344a] shadow-xl p-6 sm:p-8 space-y-6">
+        <div className="bg-[#132019] rounded-3xl border border-[#203529] shadow-xl p-6 sm:p-8 space-y-6">
           
-          <div className="border-b border-[#2c344a] pb-4 text-center">
+          <div className="border-b border-[#203529] pb-4 text-center">
             <h2 className="text-base font-bold text-white">
               Acceso a la Plataforma
             </h2>
@@ -84,7 +84,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="27-XXXXXXXX-X"
-                  className="w-full bg-[#181d2b] border border-[#2c344a] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition font-mono"
+                  className="w-full bg-[#0a110d] border border-[#203529] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition font-mono"
                   required
                 />
               </div>
@@ -101,7 +101,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-[#181d2b] border border-[#2c344a] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                  className="w-full bg-[#0a110d] border border-[#203529] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
                   required
                 />
               </div>
@@ -111,7 +111,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
+              className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
             >
               {isLoading ? 'Ingresando...' : (
                 <>
@@ -125,10 +125,10 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
           {/* Divider */}
           <div className="relative my-4">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-[#2c344a]" />
+              <div className="w-full border-t border-[#203529]" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-[#212738] px-3 text-slate-400 font-semibold">
+              <span className="bg-[#132019] px-3 text-slate-400 font-semibold">
                 O Modo Demostración
               </span>
             </div>
@@ -138,7 +138,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <button
             type="button"
             onClick={handleGuestLogin}
-            className="w-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border-2 border-emerald-500/40 font-bold p-3.5 rounded-2xl transition-all shadow-sm flex items-center justify-between text-left group"
+            className="w-full bg-emerald-950/40 hover:bg-emerald-900/40 text-emerald-300 border-2 border-emerald-500/40 font-bold p-3.5 rounded-2xl transition-all shadow-sm flex items-center justify-between text-left group"
           >
             <div className="flex items-center gap-3">
               <div className="p-2.5 bg-emerald-600 text-white rounded-xl shadow-xs group-hover:scale-105 transition-transform">

@@ -48,12 +48,12 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex justify-center items-start sm:items-center p-2 sm:p-4 overflow-y-auto">
       <div 
-        className="bg-[#212738] text-slate-100 rounded-3xl max-w-3xl w-full shadow-2xl border border-[#2c344a] overflow-hidden my-auto flex flex-col max-h-[92vh] animate-scaleUp"
+        className="bg-[#132019] text-slate-100 rounded-3xl max-w-3xl w-full shadow-2xl border border-[#203529] overflow-hidden my-auto flex flex-col max-h-[92vh] animate-scaleUp"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Modal Toolbar (Screen Only - Hidden when printing) */}
-        <div className="bg-[#1b202e] border-b border-[#2c344a] p-4 sm:p-5 flex items-center justify-between shrink-0 no-print">
+        <div className="bg-[#0e1712] border-b border-[#203529] p-4 sm:p-5 flex items-center justify-between shrink-0 no-print">
           <div className="flex items-center gap-3">
             <div className="flex items-center justify-center shrink-0">
               <img 
@@ -78,7 +78,7 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
           <div className="flex items-center gap-2">
             <button
               onClick={() => window.print()}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-sm"
               title="Imprimir o Guardar PDF"
             >
               <Printer className="w-4 h-4" />
@@ -86,7 +86,7 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition"
+              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-[#1a2c21] transition"
               aria-label="Cerrar modal"
             >
               <X className="w-5 h-5" />
@@ -97,12 +97,12 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
         {/* ----------------------------------------------------
            PAYSLIP FORMAL DOCUMENT (ISOLATED FOR PRINT)
            ---------------------------------------------------- */}
-        <div className="printable-document overflow-y-auto flex-1 p-4 sm:p-7 space-y-5 text-slate-200 text-xs sm:text-sm bg-[#1a1f2e] print:bg-white print:text-black">
+        <div className="printable-document overflow-y-auto flex-1 p-4 sm:p-7 space-y-5 text-slate-200 text-xs sm:text-sm bg-[#0a110d] print:bg-white print:text-black">
           
           {/* Institutional Document Header */}
-          <div className="border border-[#2c344a] print:border-black rounded-2xl p-4 bg-[#212738] print:bg-white space-y-3">
+          <div className="border border-[#203529] print:border-black rounded-2xl p-4 bg-[#132019] print:bg-white space-y-3">
             
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#2c344a] print:border-black gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#203529] print:border-black gap-3">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center shrink-0">
                   <img 
@@ -122,7 +122,7 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
               </div>
 
               <div className="text-left sm:text-right">
-                <span className="inline-block text-[10px] font-extrabold uppercase px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 print:bg-gray-100 print:text-black print:border-black">
+                <span className="inline-block text-[10px] font-extrabold uppercase px-2.5 py-1 rounded bg-red-600/20 text-red-300 border border-red-500/40 print:bg-gray-100 print:text-black print:border-black">
                   ORIGINAL - EJEMPLAR DOCENTE
                 </span>
                 <p className="text-xs font-bold text-slate-300 print:text-black mt-1">
@@ -134,7 +134,7 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
             {/* Grid 2 Columns: Employer & Employee */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-1">
               {/* Empleador Box */}
-              <div className="space-y-1 border-r-0 sm:border-r border-[#2c344a] print:border-black sm:pr-4">
+              <div className="space-y-1 border-r-0 sm:border-r border-[#203529] print:border-black sm:pr-4">
                 <p className="font-bold text-slate-400 print:text-black uppercase text-[10px] tracking-wider">
                   DATOS DEL EMPLEADOR / INSTITUCIÓN
                 </p>
@@ -164,38 +164,38 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
           </div>
 
           {/* Items Breakdown Table */}
-          <div className="border border-[#2c344a] print:border-black rounded-2xl overflow-hidden shadow-xs bg-[#212738] print:bg-white">
+          <div className="border border-[#203529] print:border-black rounded-2xl overflow-hidden shadow-xs bg-[#132019] print:bg-white">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[#181d2b] print:bg-gray-100 text-slate-300 print:text-black font-bold uppercase text-[10px] tracking-wider border-b border-[#2c344a] print:border-black">
+              <thead className="bg-[#0a110d] print:bg-gray-100 text-slate-300 print:text-black font-bold uppercase text-[10px] tracking-wider border-b border-[#203529] print:border-black">
                 <tr>
                   <th className="py-3 px-3.5 sm:px-4">Concepto / Descripción del Item</th>
                   <th className="py-3 px-3 text-right">Haberes (+)</th>
                   <th className="py-3 px-3 text-right">Descuentos (-)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#2c344a]/80 print:divide-black">
+              <tbody className="divide-y divide-[#203529]/80 print:divide-black">
                 {haberesItems.map((item, idx) => (
-                  <tr key={`h-${idx}`} className="hover:bg-[#1e2538] print:hover:bg-white">
+                  <tr key={`h-${idx}`} className="hover:bg-[#1a2c21] print:hover:bg-white">
                     <td className="py-2.5 px-3.5 sm:px-4 font-medium text-slate-200 print:text-black">{item.description}</td>
                     <td className="py-2.5 px-3 text-right font-bold text-emerald-400 print:text-black">{formatCurrency(item.amount)}</td>
                     <td className="py-2.5 px-3 text-right text-slate-500 print:text-black">-</td>
                   </tr>
                 ))}
                 {descuentosItems.map((item, idx) => (
-                  <tr key={`d-${idx}`} className="hover:bg-[#1e2538] print:hover:bg-white">
+                  <tr key={`d-${idx}`} className="hover:bg-[#1a2c21] print:hover:bg-white">
                     <td className="py-2.5 px-3.5 sm:px-4 font-medium text-slate-200 print:text-black">{item.description}</td>
                     <td className="py-2.5 px-3 text-right text-slate-500 print:text-black">-</td>
                     <td className="py-2.5 px-3 text-right font-bold text-rose-400 print:text-black">{formatCurrency(item.amount)}</td>
                   </tr>
                 ))}
               </tbody>
-              <tfoot className="bg-[#181d2b] print:bg-gray-100 border-t-2 border-[#2c344a] print:border-black font-bold text-xs">
+              <tfoot className="bg-[#0a110d] print:bg-gray-100 border-t-2 border-[#203529] print:border-black font-bold text-xs">
                 <tr>
                   <td className="py-2.5 px-3.5 sm:px-4 text-slate-300 print:text-black">SUBTOTALES REMUNERATIVOS Y DESCUENTOS</td>
                   <td className="py-2.5 px-3 text-right text-emerald-400 print:text-black font-bold">{formatCurrency(payslip.grossSalary)}</td>
                   <td className="py-2.5 px-3 text-right text-rose-400 print:text-black font-bold">{formatCurrency(payslip.deductions)}</td>
                 </tr>
-                <tr className="bg-blue-600/20 print:bg-gray-200 text-white print:text-black">
+                <tr className="bg-emerald-950/60 print:bg-gray-200 text-white print:text-black">
                   <td className="py-3.5 px-3.5 sm:px-4 font-extrabold text-sm sm:text-base">NETO A COBRAR LIQUIDADO</td>
                   <td colSpan={2} className="py-3.5 px-3 text-right font-extrabold text-base sm:text-xl text-emerald-300 print:text-black">
                     {formatCurrency(payslip.netSalary)}
@@ -205,27 +205,27 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
             </table>
 
             {/* Legal Net Amount In Letters */}
-            <div className="p-3 bg-[#1b202e] print:bg-white border-t border-[#2c344a] print:border-black text-[11px] text-slate-300 print:text-black italic">
+            <div className="p-3 bg-[#0e1712] print:bg-white border-t border-[#203529] print:border-black text-[11px] text-slate-300 print:text-black italic">
               <strong>IMPORTE EN LETRAS:</strong> {numberToLetters(payslip.netSalary)}
             </div>
           </div>
 
           {/* DUAL SIGNATURE & DIGITAL CERTIFICATION BOX */}
-          <div className="border border-[#2c344a] print:border-black rounded-2xl p-4 bg-[#212738] print:bg-white space-y-4">
+          <div className="border border-[#203529] print:border-black rounded-2xl p-4 bg-[#132019] print:bg-white space-y-4">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
               
               {/* Employer Representative Signature */}
-              <div className="border-b border-[#2c344a] print:border-black pb-2 text-center space-y-1">
+              <div className="border-b border-[#203529] print:border-black pb-2 text-center space-y-1">
                 <div className="h-10 flex items-center justify-center">
-                  <span className="font-serif italic text-sm text-blue-300 print:text-black">Lic. Roberto M. Fernández</span>
+                  <span className="font-serif italic text-sm text-emerald-300 print:text-black">Lic. Roberto M. Fernández</span>
                 </div>
                 <p className="font-bold text-xs text-white print:text-black">Firma y Sello Representación Legal</p>
                 <p className="text-[10px] text-slate-400 print:text-black">Colegio San Jorge • Apoderado DGCyE</p>
               </div>
 
               {/* Employee Digital Signature Status */}
-              <div className="border-b border-[#2c344a] print:border-black pb-2 text-center space-y-1">
+              <div className="border-b border-[#203529] print:border-black pb-2 text-center space-y-1">
                 <div className="h-10 flex items-center justify-center">
                   {payslip.status === 'firmado' ? (
                     <div className="flex items-center gap-1.5 text-emerald-400 print:text-black text-xs font-bold">
@@ -247,9 +247,9 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
             </div>
 
             {/* Security Verification Footer Code */}
-            <div className="flex items-center justify-between text-[10px] text-slate-400 print:text-black pt-1 border-t border-[#2c344a]/50 print:border-black">
+            <div className="flex items-center justify-between text-[10px] text-slate-400 print:text-black pt-1 border-t border-[#203529]/50 print:border-black">
               <div className="flex items-center gap-2">
-                <QrCode className="w-7 h-7 text-blue-400 print:text-black shrink-0" />
+                <QrCode className="w-7 h-7 text-emerald-400 print:text-black shrink-0" />
                 <div>
                   <p className="font-mono text-[9px]">HASH SHA256: 8f92a10b48c1e291...38d</p>
                   <p>Certificación Digital Ley 25.506 • Registro Electrónico DGCyE</p>
@@ -303,17 +303,17 @@ export const PayslipDetailModal: React.FC<PayslipDetailModalProps> = ({ payslip,
         </div>
 
         {/* Modal Footer Toolbar (Screen Only) */}
-        <div className="bg-[#1b202e] p-4 border-t border-[#2c344a] flex items-center justify-between shrink-0 no-print">
+        <div className="bg-[#0e1712] p-4 border-t border-[#203529] flex items-center justify-between shrink-0 no-print">
           <button
             onClick={handleDownload}
-            className="flex items-center gap-2 text-xs font-bold text-slate-300 bg-[#283046] border border-[#36405c] px-4 py-2.5 rounded-xl hover:bg-[#303953] transition"
+            className="flex items-center gap-2 text-xs font-bold text-slate-300 bg-[#1a2c21] border border-[#294535] px-4 py-2.5 rounded-xl hover:bg-[#233b2e] transition"
           >
             <Download className="w-4 h-4 text-slate-400" /> Descargar PDF Recibo
           </button>
 
           <button
             onClick={onClose}
-            className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition shadow-md"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition shadow-md"
           >
             Cerrar
           </button>

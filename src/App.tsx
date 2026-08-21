@@ -67,7 +67,7 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#181c28] text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-[#0d1511] text-slate-100 transition-colors duration-200">
       <Header 
         pendingPayslipsCount={pendingPayslipsCount} 
         pendingLicensesCount={pendingLicensesCount} 

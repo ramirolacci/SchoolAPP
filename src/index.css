@@ -9,26 +9,26 @@
 /* 100% Dark Mode Exclusive Background (#181c28) */
 html, body {
   color-scheme: dark;
-  background-color: #181c28;
-  color: #e2e8f0;
+  background-color: #0d1511;
+  color: #f1f5f9;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom dark scrollbars */
+/* Custom dark scrollbars with Colegio San Jorge pine tones */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #181c28;
+  background: #0d1511;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2e374d;
+  background: #1e3328;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b4763;
+  background: #2b4839;
 }
 
 /* ----------------------------------------------------

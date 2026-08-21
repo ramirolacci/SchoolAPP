@@ -17,8 +17,7 @@ import {
   FilePlus,
   ShieldCheck,
   CheckCircle2,
-  Copy,
-  AlertCircle
+  Copy
 } from 'lucide-react';
 
 export const ModulesPitch: React.FC = () => {
@@ -96,16 +95,16 @@ export const ModulesPitch: React.FC = () => {
     <div className="space-y-8">
       
       {/* Header section */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 dark:from-[#1e2538] dark:via-[#22293e] dark:to-[#1a2133] rounded-2xl p-6 text-white shadow-lg border border-blue-800/40 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-emerald-950 via-[#102419] to-red-950/40 rounded-2xl p-6 text-white shadow-lg border border-emerald-500/40 relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-700/50 text-blue-200 text-xs font-semibold border border-blue-600/40 mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/40 mb-2">
               <Sparkles className="w-3.5 h-3.5 text-amber-300" /> Módulos Especiales para el Colegio
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
               Botonera de Gestión Institucional
             </h1>
-            <p className="text-xs sm:text-sm text-blue-200 dark:text-slate-300 mt-1 max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-200 mt-1 max-w-2xl">
               Explorá las funciones avanzadas diseñadas específicamente para agilizar la operativa diaria, tesorería y autogestión docente de la institución.
             </p>
           </div>
@@ -120,26 +119,26 @@ export const ModulesPitch: React.FC = () => {
           onClick={() => setActiveModule('licencias')}
           className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
             activeModule === 'licencias'
-              ? 'bg-blue-600 text-white border-blue-500 shadow-lg ring-2 ring-blue-400/30'
-              : 'bg-white dark:bg-[#212738] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-[#2c344a] hover:border-blue-400 dark:hover:border-blue-500/50 hover:shadow-md'
+              ? 'bg-emerald-600 text-white border-emerald-500 shadow-lg ring-2 ring-emerald-400/30'
+              : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-emerald-500/50 hover:shadow-md'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
             <div className={`p-3 rounded-xl ${
-              activeModule === 'licencias' ? 'bg-white/20 text-white' : 'bg-blue-50 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400'
+              activeModule === 'licencias' ? 'bg-white/20 text-white' : 'bg-emerald-500/15 text-emerald-300'
             }`}>
               <FileText className="w-6 h-6" />
             </div>
             <span className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
               activeModule === 'licencias' 
                 ? 'bg-white/20 text-white border-white/30' 
-                : 'bg-blue-100 dark:bg-blue-500/20 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-500/30'
+                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
             }`}>
               Operativa Diaria
             </span>
           </div>
           <h3 className="font-bold text-base leading-tight">1. Licencias y Suplencias</h3>
-          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'licencias' ? 'text-blue-100' : 'text-slate-500 dark:text-slate-400'}`}>
+          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'licencias' ? 'text-emerald-100' : 'text-slate-400'}`}>
             Cobertura rápida de horas libres, cálculo automático de topes estatutarios y alertas de ausentismo.
           </p>
         </button>
@@ -149,26 +148,26 @@ export const ModulesPitch: React.FC = () => {
           onClick={() => setActiveModule('tesoreria')}
           className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
             activeModule === 'tesoreria'
-              ? 'bg-emerald-600 text-white border-emerald-500 shadow-lg ring-2 ring-emerald-400/30'
-              : 'bg-white dark:bg-[#212738] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-[#2c344a] hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:shadow-md'
+              ? 'bg-red-700 text-white border-red-500 shadow-lg ring-2 ring-red-400/30'
+              : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-red-500/50 hover:shadow-md'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
             <div className={`p-3 rounded-xl ${
-              activeModule === 'tesoreria' ? 'bg-white/20 text-white' : 'bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
+              activeModule === 'tesoreria' ? 'bg-white/20 text-white' : 'bg-red-500/15 text-red-300'
             }`}>
               <DollarSign className="w-6 h-6" />
             </div>
             <span className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
               activeModule === 'tesoreria' 
                 ? 'bg-white/20 text-white border-white/30' 
-                : 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/30'
+                : 'bg-red-500/20 text-red-300 border-red-500/30'
             }`}>
               Finanzas & RRHH
             </span>
           </div>
           <h3 className="font-bold text-base leading-tight">2. Liquidación y Tesorería</h3>
-          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'tesoreria' ? 'text-emerald-100' : 'text-slate-500 dark:text-slate-400'}`}>
+          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'tesoreria' ? 'text-red-100' : 'text-slate-400'}`}>
             Importación masiva desde sistemas contables, solicitudes de adelantos y certificados de haberes.
           </p>
         </button>
@@ -178,26 +177,26 @@ export const ModulesPitch: React.FC = () => {
           onClick={() => setActiveModule('autogestion')}
           className={`p-5 rounded-2xl border text-left transition-all relative overflow-hidden group ${
             activeModule === 'autogestion'
-              ? 'bg-indigo-600 text-white border-indigo-500 shadow-lg ring-2 ring-indigo-400/30'
-              : 'bg-white dark:bg-[#212738] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-[#2c344a] hover:border-indigo-400 dark:hover:border-indigo-500/50 hover:shadow-md'
+              ? 'bg-emerald-700 text-white border-emerald-500 shadow-lg ring-2 ring-emerald-400/30'
+              : 'bg-[#132019] text-slate-200 border-[#203529] hover:border-emerald-500/50 hover:shadow-md'
           }`}
         >
           <div className="flex items-center justify-between mb-3">
             <div className={`p-3 rounded-xl ${
-              activeModule === 'autogestion' ? 'bg-white/20 text-white' : 'bg-indigo-50 dark:bg-indigo-500/15 text-indigo-600 dark:text-indigo-400'
+              activeModule === 'autogestion' ? 'bg-white/20 text-white' : 'bg-emerald-500/15 text-emerald-300'
             }`}>
               <UserCheck className="w-6 h-6" />
             </div>
             <span className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${
               activeModule === 'autogestion' 
                 ? 'bg-white/20 text-white border-white/30' 
-                : 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-800 dark:text-indigo-300 border-indigo-200 dark:border-indigo-500/30'
+                : 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30'
             }`}>
               Autogestión
             </span>
           </div>
           <h3 className="font-bold text-base leading-tight">3. Portal de Autogestión</h3>
-          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'autogestion' ? 'text-indigo-100' : 'text-slate-500 dark:text-slate-400'}`}>
+          <p className={`text-xs mt-1.5 leading-relaxed ${activeModule === 'autogestion' ? 'text-emerald-100' : 'text-slate-400'}`}>
             Declaración jurada de cargos, solicitudes de salidas didácticas e instalación PWA en celulares.
           </p>
         </button>
