@@ -17,8 +17,7 @@ import {
   FilePlus,
   ShieldCheck,
   CheckCircle2,
-  Copy,
-  AlertCircle
+  Copy
 } from 'lucide-react';
 
 export const ModulesPitch: React.FC = () => {
