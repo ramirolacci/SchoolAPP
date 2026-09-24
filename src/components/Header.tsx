@@ -151,51 +151,143 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Overlay & Side Panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-800 bg-[#0f172a] px-4 pt-2 pb-4 space-y-1">
-          <div className="py-2 border-b border-slate-700/60 mb-2 flex items-center justify-between">
-            <div>
-              <p className="text-sm font-semibold text-white">{mockUser.name}</p>
-              <p className="text-xs text-slate-400">{mockUser.role} • {mockUser.fileNumber}</p>
-            </div>
-            {onLogout && (
-              <button
-                onClick={onLogout}
-                className="p-2 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/40 text-xs flex items-center gap-1"
-                title="Salir"
-              >
-                <LogOut className="w-4 h-4" /> Salir
-              </button>
-            )}
-          </div>
+        <div className="fixed inset-0 z-50 md:hidden flex justify-end">
+          {/* Animated Glass Backdrop */}
+          <div 
+            className="fixed inset-0 bg-slate-950/70 backdrop-blur-md transition-opacity duration-300 animate-in fade-in"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setMobileMenuOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center justify-between px-3 py-2.5 rounded-xl text-base font-medium ${
-                  isActive
-                    ? 'bg-blue-600/20 text-blue-300 font-semibold border border-blue-500/40'
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'
-                }`
-              }
-            >
-              <div className="flex items-center gap-3">
-                <item.icon className="w-5 h-5" />
-                <span>{item.name}</span>
+          {/* Slide Drawer Content */}
+          <div className="relative w-full max-w-xs bg-gradient-to-b from-[#1a2032] via-[#161a29] to-[#0f121c] text-slate-100 h-full shadow-2xl border-l border-slate-700/50 flex flex-col z-10 animate-in slide-in-from-right duration-300">
+            
+            {/* Drawer Header / Close Button */}
+            <div className="p-4 border-b border-slate-800/80 flex items-center justify-between bg-[#1f263b]/60 backdrop-blur-md">
+              <div className="flex items-center gap-2.5">
+                <img 
+                  src="/logo.png" 
+                  alt="Colegio San Jorge" 
+                  className="h-8 w-auto object-contain"
+                />
+                <div>
+                  <h3 className="text-sm font-bold text-white leading-tight">Colegio San Jorge</h3>
+                  <span className="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Portal ABC</span>
+                </div>
               </div>
-              {item.badge !== undefined && (
-                <span className="bg-amber-500 text-slate-950 font-bold text-xs px-2 py-0.5 rounded-full">
-                  {item.badge} pendientes
+
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all border border-transparent hover:border-slate-700"
+                aria-label="Cerrar menú"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Profile Hero Card */}
+            <div className="p-4 m-3 rounded-2xl bg-gradient-to-br from-blue-900/40 via-[#1e273e]/60 to-slate-900/80 border border-blue-500/20 shadow-lg relative overflow-hidden">
+              <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl pointer-events-none" />
+              <div className="flex items-center gap-3 relative z-10">
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 font-bold text-base flex items-center justify-center text-white shadow-md shadow-blue-500/20 border border-blue-400/30">
+                    MR
+                  </div>
+                  <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full ring-2 ring-[#161a29]" title="Usuario activo" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-bold text-white truncate leading-snug">
+                    {mockUser.name}
+                  </p>
+                  <p className="text-xs text-blue-300/80 font-medium truncate">
+                    {mockUser.role}
+                  </p>
+                  <div className="mt-1 flex items-center gap-2">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800/90 text-slate-300 border border-slate-700 font-mono">
+                      {mockUser.fileNumber}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Menu Links */}
+            <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
+              <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Navegación Principal
+              </div>
+              
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `group flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-blue-600/30 to-indigo-600/20 text-white font-semibold border border-blue-500/40 shadow-sm shadow-blue-500/10'
+                        : 'text-slate-300 hover:bg-slate-800/50 hover:text-white border border-transparent'
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-lg transition-colors ${
+                          isActive 
+                            ? 'bg-blue-500 text-white shadow-xs shadow-blue-500/50' 
+                            : 'bg-slate-800/80 text-slate-400 group-hover:text-blue-400 group-hover:bg-slate-800'
+                        }`}>
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                        <span>{item.name}</span>
+                      </div>
+                      
+                      {item.badge !== undefined ? (
+                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded-full shadow-xs animate-pulse">
+                          {item.badge}
+                        </span>
+                      ) : (
+                        <div className={`w-1.5 h-1.5 rounded-full transition-all ${
+                          isActive ? 'bg-blue-400' : 'bg-transparent group-hover:bg-slate-600'
+                        }`} />
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              ))}
+            </nav>
+
+            {/* Footer / Quick Logout Actions */}
+            <div className="p-4 border-t border-slate-800/80 bg-[#121522]/90 space-y-3">
+              <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                <span className="flex items-center gap-1.5 text-slate-400">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
+                  Ciclo Lectivo 2026
                 </span>
+                <span className="font-mono text-[10px] text-slate-500">v2.4 ABC</span>
+              </div>
+
+              {onLogout && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onLogout();
+                  }}
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-rose-500/15 to-rose-600/10 hover:from-rose-500/25 hover:to-rose-600/20 text-rose-300 border border-rose-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Cerrar Sesión Portal
+                </button>
               )}
-            </NavLink>
-          ))}
+            </div>
+
+          </div>
         </div>
       )}
     </header>
   );
 };
+
