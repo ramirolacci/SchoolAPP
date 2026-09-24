@@ -51,11 +51,11 @@ export const Header: React.FC<HeaderProps> = ({
           
           {/* Logo & School Name */}
           <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="flex items-center justify-center shrink-0">
+            <div className="w-11 h-11 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shrink-0 border border-slate-700/60 shadow-xs transition-transform duration-200 group-hover:scale-105">
               <img 
                 src="/logo.png" 
                 alt="Logo Colegio San Jorge" 
-                className="h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
             <div>
@@ -167,11 +167,13 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Drawer Header / Close Button */}
             <div className="p-4 border-b border-slate-800/80 flex items-center justify-between bg-[#1f263b]/60 backdrop-blur-md">
               <div className="flex items-center gap-2.5">
-                <img 
-                  src="/logo.png" 
-                  alt="Colegio San Jorge" 
-                  className="h-8 w-auto object-contain"
-                />
+                <div className="w-9 h-9 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shrink-0 border border-slate-700/60 shadow-xs">
+                  <img 
+                    src="/logo.png" 
+                    alt="Colegio San Jorge" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
                 <div>
                   <h3 className="text-sm font-bold text-white leading-tight">Colegio San Jorge</h3>
                   <span className="text-[10px] text-blue-400 font-semibold tracking-wider uppercase">Portal ABC</span>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { mockUser } from '../data/mockData';
 import { 
   Mail, 
@@ -6,15 +6,28 @@ import {
   Edit3, 
   Check, 
   Key,
-  GraduationCap
+  GraduationCap,
+  Plus,
+  Camera
 } from 'lucide-react';
 
 export const Profile: React.FC = () => {
   const [userState, setUserState] = useState(mockUser);
+  const [profileImage, setProfileImage] = useState<string | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [phoneInput, setPhoneInput] = useState(userState.phone);
   const [addressInput, setAddressInput] = useState(userState.address);
   const [savedSuccess, setSavedSuccess] = useState(false);
+  
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+    }
+  };
 
   const handleSaveProfile = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,11 +57,56 @@ export const Profile: React.FC = () => {
         <div className="px-6 pb-6 pt-0 relative">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-12 mb-4">
             
-            {/* Avatar */}
+            {/* Avatar with + icon and upload trigger */}
             <div className="flex items-end gap-4">
-              <div className="w-24 h-24 rounded-2xl bg-blue-600 text-white font-extrabold text-2xl flex items-center justify-center border-4 border-[#1e293b] shadow-xl">
-                MR
+              <div 
+                onClick={() => fileInputRef.current?.click()}
+                className="relative group cursor-pointer"
+                title="Hacé clic para agregar o cambiar tu foto de perfil"
+              >
+                <input 
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleImageChange}
+                  accept="image/*"
+                  className="hidden"
+                />
+
+                {/* Box Avatar Container */}
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-extrabold text-2xl flex items-center justify-center border-4 border-[#1e293b] shadow-xl overflow-hidden relative transition-all duration-200 group-hover:border-blue-500/80">
+                  {profileImage ? (
+                    <img 
+                      src={profileImage} 
+                      alt="Foto de Perfil" 
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex items-center gap-0.5">
+                      <span>MR</span>
+                    </div>
+                  )}
+
+                  {/* Glass Hover Overlay with + / Camera icon */}
+                  <div className="absolute inset-0 bg-slate-950/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white gap-1">
+                    <Camera className="w-6 h-6 text-blue-300" />
+                    <span className="text-[10px] font-bold tracking-wide uppercase">Cargar</span>
+                  </div>
+                </div>
+
+                {/* Corner '+' Action Button Badge */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    fileInputRef.current?.click();
+                  }}
+                  className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-blue-500 hover:bg-blue-400 text-white border-2 border-[#1e293b] shadow-md flex items-center justify-center transition-transform group-hover:scale-110 active:scale-95"
+                  title="Agregar foto de perfil"
+                >
+                  <Plus className="w-4 h-4 stroke-[3]" />
+                </button>
               </div>
+
               <div className="mb-1">
                 <h1 className="text-2xl font-bold text-white leading-tight flex items-center gap-2">
                   {userState.name}

@@ -7,11 +7,11 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-white flex items-center justify-center p-0.5 shrink-0 border border-slate-700/60 shadow-xs">
             <img 
               src="/logo.png" 
               alt="Logo Colegio San Jorge" 
-              className="h-9 w-auto object-contain"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
           <div>
