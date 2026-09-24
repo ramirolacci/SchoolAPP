@@ -27,6 +27,16 @@ function AppContent() {
     document.documentElement.classList.remove('light');
   }, []);
 
+  // Persistent User Avatar State
+  const [userAvatar, setUserAvatar] = useState<string | null>(() => {
+    return localStorage.getItem('school_app_user_avatar');
+  });
+
+  const handleUpdateAvatar = (newAvatarUrl: string) => {
+    setUserAvatar(newAvatarUrl);
+    localStorage.setItem('school_app_user_avatar', newAvatarUrl);
+  };
+
   const handleLogin = () => {
     setIsAuthenticated(true);
     localStorage.setItem('school_app_auth', 'true');
@@ -72,6 +82,7 @@ function AppContent() {
         pendingPayslipsCount={pendingPayslipsCount} 
         pendingLicensesCount={pendingLicensesCount} 
         onLogout={handleLogout}
+        userAvatar={userAvatar}
       />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
@@ -106,7 +117,15 @@ function AppContent() {
             } 
           />
           <Route path="/modulos" element={<ModulesPitch />} />
-          <Route path="/perfil" element={<Profile />} />
+          <Route 
+            path="/perfil" 
+            element={
+              <Profile 
+                userAvatar={userAvatar} 
+                onUpdateAvatar={handleUpdateAvatar} 
+              />
+            } 
+          />
         </Routes>
       </main>
 

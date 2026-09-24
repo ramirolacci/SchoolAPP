@@ -17,12 +17,14 @@ interface HeaderProps {
   pendingPayslipsCount?: number;
   pendingLicensesCount?: number;
   onLogout?: () => void;
+  userAvatar?: string | null;
 }
 
 export const Header: React.FC<HeaderProps> = ({ 
   pendingPayslipsCount = 0,
   pendingLicensesCount = 0,
-  onLogout
+  onLogout,
+  userAvatar
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -115,8 +117,12 @@ export const Header: React.FC<HeaderProps> = ({
             
             {/* User Pill */}
             <NavLink to="/perfil" className="hidden lg:flex items-center gap-2.5 group hover:opacity-90 transition">
-              <div className="w-9 h-9 rounded-full font-semibold text-xs flex items-center justify-center border shadow-xs bg-blue-600/30 text-blue-300 border-blue-500/40">
-                MR
+              <div className="w-9 h-9 rounded-full font-semibold text-xs flex items-center justify-center border shadow-xs bg-blue-600/30 text-blue-300 border-blue-500/40 overflow-hidden shrink-0">
+                {userAvatar ? (
+                  <img src={userAvatar} alt="Perfil" className="w-full h-full object-cover" />
+                ) : (
+                  <span>MR</span>
+                )}
               </div>
               <div className="text-left leading-tight">
                 <p className="text-xs font-semibold text-white group-hover:text-blue-300 transition">
@@ -194,8 +200,12 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl pointer-events-none" />
               <div className="flex items-center gap-3 relative z-10">
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 font-bold text-base flex items-center justify-center text-white shadow-md shadow-blue-500/20 border border-blue-400/30">
-                    MR
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 font-bold text-base flex items-center justify-center text-white shadow-md shadow-blue-500/20 border border-blue-400/30 overflow-hidden shrink-0">
+                    {userAvatar ? (
+                      <img src={userAvatar} alt="Perfil" className="w-full h-full object-cover" />
+                    ) : (
+                      <span>MR</span>
+                    )}
                   </div>
                   <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full ring-2 ring-[#161a29]" title="Usuario activo" />
                 </div>

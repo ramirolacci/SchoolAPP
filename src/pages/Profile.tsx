@@ -11,9 +11,13 @@ import {
   Camera
 } from 'lucide-react';
 
-export const Profile: React.FC = () => {
+interface ProfileProps {
+  userAvatar?: string | null;
+  onUpdateAvatar?: (newAvatarUrl: string) => void;
+}
+
+export const Profile: React.FC<ProfileProps> = ({ userAvatar, onUpdateAvatar }) => {
   const [userState, setUserState] = useState(mockUser);
-  const [profileImage, setProfileImage] = useState<string | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [phoneInput, setPhoneInput] = useState(userState.phone);
   const [addressInput, setAddressInput] = useState(userState.address);
@@ -24,8 +28,14 @@ export const Profile: React.FC = () => {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setProfileImage(imageUrl);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const base64Url = event.target?.result as string;
+        if (base64Url && onUpdateAvatar) {
+          onUpdateAvatar(base64Url);
+        }
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -74,9 +84,9 @@ export const Profile: React.FC = () => {
 
                 {/* Box Avatar Container */}
                 <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-extrabold text-2xl flex items-center justify-center border-4 border-[#1e293b] shadow-xl overflow-hidden relative transition-all duration-200 group-hover:border-blue-500/80">
-                  {profileImage ? (
+                  {userAvatar ? (
                     <img 
-                      src={profileImage} 
+                      src={userAvatar} 
                       alt="Foto de Perfil" 
                       className="w-full h-full object-cover"
                     />
