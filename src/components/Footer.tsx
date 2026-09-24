@@ -30,7 +30,17 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="text-xs text-slate-400 text-center sm:text-right">
-          <p>© {new Date().getFullYear()} Colegio San Jorge. Todos los derechos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} Colegio San Jorge. Todos los derechos reservados | Desarrollado por{' '}
+            <a 
+              href="https://waveframe.com.ar/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-bold underline text-slate-300 hover:text-white transition"
+            >
+              WaveFrame Studio
+            </a>
+          </p>
         </div>
 
       </div>
